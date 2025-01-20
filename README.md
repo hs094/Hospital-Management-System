@@ -3,6 +3,24 @@
 ## **Project Overview:**  
 Developed a comprehensive Hospital Management System designed to streamline administrative, clinical, and patient management workflows. The platform serves healthcare administrators, doctors, and patients by enabling efficient scheduling, billing, and real-time health data tracking. This system significantly improved operational efficiency and enhanced patient care by integrating modular components for various healthcare operations.
 
+## Steps to Run the Code
+1. Create a .env file with the following configuration:
+#### Environment File Structure
+```
+NODE_ENV=<development>/<test>
+PORT=3000
+DATABASE_STRING=<DATABASE_CONN_STRING>
+JWT_SECRET=<JWT Token>
+SUPABASE_S3_BUCKET=<SUPABASE_S3_BUCKET>
+```
+2. Run the front-end and backend.
+
+### **Technologies Used:**  
+- **Backend:** Node.js, Express.js, PostgreSQL for robust server-side application logic and a relational database ensuring data integrity and scalability.  
+- **Frontend:** React.js for a dynamic, responsive user interface, leveraging React Bootstrap for consistent UI design.  
+- **Security:** Helmet.js and xss-clean for securing HTTP headers and sanitizing input, ensuring data protection.  
+- **Others:** Sequelize ORM for database management, Winston for logging, and Morgan for HTTP request monitoring.  
+
 ```
 Directory structure:
 └── hs094-hospital-management-system/
@@ -328,11 +346,6 @@ Directory structure:
                 └── augmentedAxios.js
 
 ```
-### **Technologies Used:**  
-- **Backend:** Node.js, Express.js, PostgreSQL for robust server-side application logic and a relational database ensuring data integrity and scalability.  
-- **Frontend:** React.js for a dynamic, responsive user interface, leveraging React Bootstrap for consistent UI design.  
-- **Security:** Helmet.js and xss-clean for securing HTTP headers and sanitizing input, ensuring data protection.  
-- **Others:** Sequelize ORM for database management, Winston for logging, and Morgan for HTTP request monitoring.  
 
 ### **Responsibilities:**   
 - Architected the entire backend system, focusing on modular and maintainable API design.  
@@ -345,7 +358,7 @@ Directory structure:
 - **Challenge:** Integrating real-time scheduling to manage overlapping doctor appointments and resource allocation efficiently.  
 - **Solution:** Designed a conflict-free slot allocation system using Sequelize's transaction management and implemented real-time updates with WebSocket communication.  
 
-<!-- **Outcomes:**  
+### **Outcomes:**  
 - Reduced appointment scheduling time by 40% with the introduction of the real-time scheduling system.  
 - Achieved 98% system uptime with robust error handling and logging mechanisms.  
 - Successfully onboarded over 100 healthcare professionals and streamlined operations for a medium-sized hospital within six months of deployment. -->
