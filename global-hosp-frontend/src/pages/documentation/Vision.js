@@ -12,7 +12,7 @@ import {
 
 import { Link } from "react-router-dom";
 
-import { routes } from "../routes";
+import { routes } from "../../routes";
 import TopNav from "../../components/top_nav";
 import Footer from "../../components/foot";
 export default () => (

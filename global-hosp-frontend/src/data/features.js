@@ -1,4 +1,3 @@
-
 import { fasharp, faSolid, faCalendarAlt, faFileAlt, faImages, faMapMarkedAlt, faMobileAlt, faPenFancy, faVials, faCalendarCheck, faTablets, faNotesMedical, faHospital, faClinicMedical, faPrescriptionBottleAlt, faPrescription, faMicrochip, faBrain } from "@fortawesome/free-solid-svg-icons";
 import { faAccessibleIcon, faBootstrap, faGulp, faHtml5, faReact, faSas} from "@fortawesome/free-brands-svg-icons";
 

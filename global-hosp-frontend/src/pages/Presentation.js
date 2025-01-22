@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faExternalLinkAlt, faTimesCircle, faCheckCircle, faCalendarAlt, faStethoscope,faCodeBranch, faShoppingCart, faCalendar, faFolder, faMapMarkedAlt, faPager, faFileCode, faDownload, faMap, faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faExternalLinkAlt, faTimesCircle, faCheckCircle, faCalendarAlt, faStethoscope, faCodeBranch, faShoppingCart, faCalendar, faFolder, faMapMarkedAlt, faPager, faFileCode, faDownload, faMap, faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { faBootstrap, faGithub, faJs, faReact, faSass } from "@fortawesome/free-brands-svg-icons";
 import { Col, Row, Card, Image, Button, Container, ListGroup, Tooltip, OverlayTrigger, Form, Navbar, Nav, Badge } from '@themesberg/react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -84,7 +84,7 @@ export default () => {
       <Navbar variant="dark" expand="lg" bg="dark" className="navbar-transparent navbar-theme-primary sticky-top">
         <Container className="position-relative justify-content-between px-3">
           <Navbar.Brand as={HashLink} to="#home" className="me-lg-3 d-flex align-items-center">
-          <FontAwesomeIcon icon={faStethoscope} className="ms-2" />
+            <FontAwesomeIcon icon={faStethoscope} className="ms-2" />
             <span className="ms-2 brand-text d-none d-md-inline">Global Hospitals</span>
           </Navbar.Brand>
 
@@ -99,7 +99,7 @@ export default () => {
                 </Nav.Link> */}
               </Nav>
             </Navbar.Collapse>
-            <i className="phone-icon" style={{color: "cyan"}}><FontAwesomeIcon icon={faPhone} />1800-8908-789</i>
+            <i className="phone-icon" style={{ color: "cyan" }}><FontAwesomeIcon icon={faPhone} />1800-8908-789</i>
           </div>
         </Container>
       </Navbar>
@@ -240,16 +240,16 @@ export default () => {
                 Our <span className="fw-bold">Doctors</span>
               </h2>
               <p className="lead px-lg-4">
-              Our team of doctors is dedicated to providing high-quality healthcare to all our patients. We understand that each patient is unique and requires personalized care, which is why we take the time to listen to your concerns and develop a treatment plan that is tailored to your individual needs.
+                Our team of doctors is dedicated to providing high-quality healthcare to all our patients. We understand that each patient is unique and requires personalized care, which is why we take the time to listen to your concerns and develop a treatment plan that is tailored to your individual needs.
               </p>
             </Col>
             <div className="d-flex align-items-center justify-content-center">
-                <Button variant="secondary" as={Link} to={routes.DocsBuild.path} className="text-dark me-3">
+              <Button variant="secondary" as={Link} to={routes.DocsBuild.path} className="text-dark me-3">
                 Know More <FontAwesomeIcon icon={faExternalLinkAlt} className="d-none d-sm-inline ms-1" />
-                </Button>
-              </div>
+              </Button>
+            </div>
           </Row>
-          
+
         </Container>
       </section>
       <footer className="footer py-6 bg-black text-white">
@@ -269,21 +269,21 @@ export default () => {
               <span className="h5">Global Hospitals</span>
               <ul className="links-vertical mt-2">
                 <Button as={Link} variant="link" className="text-light me-4" to={routes.AboutUs.path} >
-                About Us
-                </Button>  
+                  About Us
+                </Button>
                 <Button variant="link" as={Link} to={routes.ContactUs.path} className="text-light me-4">
-                Contact Us
-                </Button> 
+                  Contact Us
+                </Button>
                 <Button variant="link" as={Link} to={routes.History.path} className="text-light me-4">
-                History
-                </Button> 
+                  History
+                </Button>
                 <Button variant="link" as={Link} to={routes.Vision.path} className="text-light me-4">
-                Vision
-                </Button> 
+                  Vision
+                </Button>
                 <Button as={Link} variant="secondary" className="animate-hover btn btn-primary d-inline-flex align-items-center" to={routes.Signin.path} >
-                  <FontAwesomeIcon icon={faArrowAltCircleRight} className="animate-center-3 me-3 ms-2"/>
+                  <FontAwesomeIcon icon={faArrowAltCircleRight} className="animate-center-3 me-3 ms-2" />
                   Login
-            </Button>
+                </Button>
               </ul>
             </Col>
             <Col xs={6} md={2} className="mb-5 mb-lg-0">
