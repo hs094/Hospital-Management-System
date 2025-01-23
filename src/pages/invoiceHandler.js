@@ -13,7 +13,7 @@ import axios from "axios";
 import AugmentedAxios from "../utils/augmentedAxios";
 import InvoicePdf from "../components/invoicePdf.js";
 
-export default () => {
+const invoiceHandler = () => {
   const [invoice, setInvoice] = useState([]);
   const { id } = useParams();
   useEffect(() => {
@@ -27,3 +27,5 @@ export default () => {
     </>
   );
 };
+
+export default invoiceHandler;

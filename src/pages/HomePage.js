@@ -41,7 +41,7 @@ import Admin_Doc_add from "./Admin_Doc_add";
 import Admin_del from "./Admin_del";
 import Admin_Op_add from "./Admin_Op_add";
 import Doc_Slot from "./Doc_Slot";
-import operators from "./operators";
+import Operators from "./operators";
 import { MedicationList } from "../components/Widgets";
 import room_block from "./room_block";
 import Procedures from "./Procedures";
@@ -79,8 +79,8 @@ import Tables from "./components/Tables";
 import Tabs from "./components/Tabs";
 import Tooltips from "./components/Tooltips";
 import Toasts from "./components/Toasts";
-import patients from "./patients";
-import medicines from "./medicines";
+import Patients from "./patients";
+import Medicines from "./medicines";
 import invoicePdf from "../components/invoicePdf.js";
 import invoiceHandler from "./invoiceHandler";
 import ViewTests from "./ViewTests";
@@ -191,13 +191,13 @@ const RouteWithSidebarData = ({ children }) => {
 
 export default () => (
   <Routes>
-    {/* Basic Routes with Loader */}
+    {/* Basic routes with Loader */}
     <Route
       path={routes.Presentation.path}
       element={<RouteWithLoader><Presentation /></RouteWithLoader>}
     />
     <Route
-      path={routes.Signin.path} 
+      path={routes.Signin.path}
       element={<RouteWithLoader><Signin /></RouteWithLoader>}
     />
     <Route
@@ -225,9 +225,13 @@ export default () => (
       element={<RouteWithLoader><ServerError /></RouteWithLoader>}
     />
 
-    {/* Routes with Regular Sidebar */}
+    {/* routes with Regular Sidebar */}
     <Route
       path={routes.DashboardOverview.path}
+      element={<RouteWithSidebar><DashboardOverview /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Dashboards.path1}
       element={<RouteWithSidebar><DashboardOverview /></RouteWithSidebar>}
     />
     <Route
@@ -243,6 +247,15 @@ export default () => (
       element={<RouteWithSidebar><FDAdmit /></RouteWithSidebar>}
     />
     <Route
+      path={routes.AdmPatients.path}
+      element={<RouteWithSidebar><AdmPatients /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Patients.path}
+      elements={<RouteWithSidebar><Patients /></RouteWithSidebar>}
+    />
+
+    <Route
       path={routes.FDAppoint.path}
       element={<RouteWithSidebar><FDAppoint /></RouteWithSidebar>}
     />
@@ -250,10 +263,18 @@ export default () => (
       path={routes.Doctors.path}
       element={<RouteWithSidebar><Doctors /></RouteWithSidebar>}
     />
+    <Route
+      path={routes.BootstrapTables.path}
+      element={<RouteWithSidebar><BootstrapTables /></RouteWithSidebar>}
+    />
 
-    {/* Admin Routes */}
+    {/* Admin routes */}
     <Route
       path={routes.DashboardOverview.path2}
+      element={<RouteWithSidebarAdmin><DashboardOverview /></RouteWithSidebarAdmin>}
+    />
+    <Route
+      path={routes.Dashboards.path2}
       element={<RouteWithSidebarAdmin><DashboardOverview /></RouteWithSidebarAdmin>}
     />
     <Route
@@ -265,29 +286,31 @@ export default () => (
       element={<RouteWithSidebarAdmin><Admin_del /></RouteWithSidebarAdmin>}
     />
     <Route
+      path={routes.Doc_show.path}
+      element={<RouteWithSidebarAdmin><Doctors /></RouteWithSidebarAdmin>}
+    />
+    <Route
       path={routes.Op_add.path}
       element={<RouteWithSidebarAdmin><Admin_Op_add /></RouteWithSidebarAdmin>}
     />
-
-    {/* Doctor Routes */}
     <Route
-      path={routes.DashboardOverview.path3}
-      element={<RouteWithSidebarDoc><DashboardOverview /></RouteWithSidebarDoc>}
-    />
-    <Route
-      path={routes.PatientShow.path2}
-      element={<RouteWithSidebarDoc><Doc_Patient_List /></RouteWithSidebarDoc>}
-    />
-    <Route
-      path={routes.Doc_Slot.path}
-      element={<RouteWithSidebarDoc><Doc_Slot /></RouteWithSidebarDoc>}
-    />
-    <Route
-      path={routes.PQuery.path}
-      element={<RouteWithSidebarDoc><Doc_Patient_Query /></RouteWithSidebarDoc>}
+      path={routes.Op_show.path}
+      element={<RouteWithSidebarAdmin><Operators /></RouteWithSidebarAdmin>}
     />
 
-    {/* Data Entry Routes */}
+    {/* Data Entry */}
+    <Route
+      path={routes.DashboardOverview.path4}
+      element={<RouteWithSidebarData><DashboardOverview /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.Doctors.path3}
+      element={<RouteWithSidebarData><Doctors /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.Dashboards.path4}
+      element={<RouteWithSidebarData><DashboardOverview /></RouteWithSidebarData>}
+    />
     <Route
       path={routes.PatientTest.path}
       element={<RouteWithSidebarData><PTest /></RouteWithSidebarData>}
@@ -304,8 +327,149 @@ export default () => (
       path={routes.Tests.path}
       element={<RouteWithSidebarData><ViewTests /></RouteWithSidebarData>}
     />
+    <Route
+      path={routes.MedicineShow.path2}
+      element={<RouteWithSidebarData><Medicines /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.PatientStay.path}
+      element={<RouteWithSidebarData><PStay /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.AddProcedure.path}
+      element={<RouteWithSidebarData><Procedures /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.AddMedication.path}
+      element={<RouteWithSidebarData><AddMedication /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.AddRoom.path}
+      element={<RouteWithSidebarData><room_block /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.AddBlock.path}
+      element={<RouteWithSidebarData><AddBlock /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.Patients.path2}
+      element={<RouteWithSidebarData><Patients /></RouteWithSidebarData>}
+    />
+    <Route
+      path={routes.AdmPatients.path2}
+      element={<RouteWithSidebarData><AdmPatients /></RouteWithSidebarData>}
+    />
 
-    {/* Documentation Routes */}
+    {/* Doctor routes */}
+    <Route
+      path={routes.DashboardOverview.path3}
+      element={<RouteWithSidebarDoc><DashboardOverview /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.Dashboards.path3}
+      element={<RouteWithSidebarDoc><DashboardOverview /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.PatientShow.path2}
+      element={<RouteWithSidebarDoc><Doc_Patient_List /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.Doc_Slot.path}
+      element={<RouteWithSidebarDoc><Doc_Slot /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.PQuery.path}
+      element={<RouteWithSidebarDoc><Doc_Patient_Query /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.MedicineShow.path}
+      element={<RouteWithSidebarDoc><Medicines /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.Tests.path2}
+      element={<RouteWithSidebarDoc><ViewTests /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.DocMedication.path}
+      element={<RouteWithSidebarDoc><DocMedication /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.DocTreatment.path}
+      element={<RouteWithSidebarDoc><DocTreatment /></RouteWithSidebarDoc>}
+    />
+    <Route
+      path={routes.AdmPatients.path3}
+      element={<RouteWithSidebarDoc><AdmPatients /></RouteWithSidebarDoc>}
+    />
+
+    {/* Example Components */}
+    {/* Component routes */}
+    <Route
+      path={routes.Accordions.path}
+      element={<RouteWithSidebar><Accordion /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Alerts.path}
+      element={<RouteWithSidebar><Alerts /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Badges.path}
+      element={<RouteWithSidebar><Badges /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Breadcrumbs.path}
+      element={<RouteWithSidebar><Breadcrumbs /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Buttons.path}
+      element={<RouteWithSidebar><Buttons /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Forms.path}
+      element={<RouteWithSidebar><Forms /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Modals.path}
+      element={<RouteWithSidebar><Modals /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Navs.path}
+      element={<RouteWithSidebar><Navs /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Navbars.path}
+      element={<RouteWithSidebar><Navbars /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Pagination.path}
+      element={<RouteWithSidebar><Pagination /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Popovers.path}
+      element={<RouteWithSidebar><Popovers /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Progress.path}
+      element={<RouteWithSidebar><Progress /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Tables.path}
+      element={<RouteWithSidebar><Tables /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Tabs.path}
+      element={<RouteWithSidebar><Tabs /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Tooltips.path}
+      element={<RouteWithSidebar><Tooltips /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.Toasts.path}
+      element={<RouteWithSidebar><Toasts /></RouteWithSidebar>}
+    />
+
+    {/* Documentation routes */}
     <Route
       path={routes.AboutUs.path}
       element={<RouteWithLoader><AboutUs /></RouteWithLoader>}
@@ -322,9 +486,21 @@ export default () => (
       path={routes.Vision.path}
       element={<RouteWithLoader><Vision /></RouteWithLoader>}
     />
+    {/* <Route
+      path={routes.DocsFolderStructure.path}
+      component={<RouteWithSidebar><DocsFolderStructure /></RouteWithSidebar>}
+    />
+    <Route
+      path={routes.DocsBuild.path}
+      component={<RouteWithLoader><DocsBuild /></RouteWithLoader>}
+    />
+    <Route
+      path={routes.DocsChangelog.path}
+      component={<RouteWithSidebar><DocsChangelog /></RouteWithSidebar>}
+    /> */}
 
     {/* Invoice Route */}
-    <Route 
+    <Route
       path="/get/invoice/:id"
       element={<RouteWithSidebar><invoiceHandler /></RouteWithSidebar>}
     />

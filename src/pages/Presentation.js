@@ -81,28 +81,6 @@ export default () => {
 
   return (
     <>
-      <Navbar variant="dark" expand="lg" bg="dark" className="navbar-transparent navbar-theme-primary sticky-top">
-        <Container className="position-relative justify-content-between px-3">
-          <Navbar.Brand as={HashLink} to="#home" className="me-lg-3 d-flex align-items-center">
-            <FontAwesomeIcon icon={faStethoscope} className="ms-2" />
-            <span className="ms-2 brand-text d-none d-md-inline">Global Hospitals</span>
-          </Navbar.Brand>
-
-          <div className="d-flex align-items-center">
-            <Navbar.Collapse id="navbar-default-primary">
-              <Nav className="navbar-nav-hover align-items-lg-center">
-                <Nav.Link as={HashLink} to="#gallery">Gallery</Nav.Link>
-                <Nav.Link as={HashLink} to="#services" className="d-sm-none d-xl-inline">Services Offered</Nav.Link>
-                <Nav.Link as={HashLink} to="#ourdoctors">Our Doctors</Nav.Link>
-                {/* <Nav.Link>
-                    <Button href="https://demo.themesberg.com/volt-pro-react/#/" target="_blank" variant="secondary" className="m-0 mt-2">Demo Volt React Pro <FontAwesomeIcon icon={faExternalLinkAlt} className="ms-1" /></Button>
-                </Nav.Link> */}
-              </Nav>
-            </Navbar.Collapse>
-            <i className="phone-icon" style={{ color: "cyan" }}><FontAwesomeIcon icon={faPhone} />1800-8908-789</i>
-          </div>
-        </Container>
-      </Navbar>
       <section className="section-header overflow-hidden pt-5 pt-lg-6 pb-9 pb-lg-12 bg-primary text-white" id="home">
         <Container>
           <Row>
@@ -110,6 +88,26 @@ export default () => {
               <div className="react-big-icon d-none d-lg-block"><span className="fab fa-react"></span></div>
               <h1 className="fw-bolder text-secondary">Global Hospitals</h1>
               <p className="text-muted fw-light mb-5 h5">Touching lives, one patient at a time. Because Your Life Matters. Fast, friendly and accurate care for you.</p>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mb-8">
+            <Col xs={12} className="d-flex justify-content-center gap-4">
+              <Button
+                as={Link}
+                variant="secondary"
+                className="d-flex align-items-center gap-2"
+                to={routes.Signin.path}>
+                <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                <span>Login</span>
+              </Button>
+              <Button
+                as={Link}
+                variant="secondary"
+                className="d-flex align-items-center gap-2"
+                to={routes.Signup.path}>
+                <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                <span>Sign Up</span>
+              </Button>
             </Col>
           </Row>
           <figure className="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
@@ -279,10 +277,6 @@ export default () => {
                 </Button>
                 <Button variant="link" as={Link} to={routes.Vision.path} className="text-light me-4">
                   Vision
-                </Button>
-                <Button as={Link} variant="secondary" className="animate-hover btn btn-primary d-inline-flex align-items-center" to={routes.Signin.path} >
-                  <FontAwesomeIcon icon={faArrowAltCircleRight} className="animate-center-3 me-3 ms-2" />
-                  Login
                 </Button>
               </ul>
             </Col>

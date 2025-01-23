@@ -46,7 +46,7 @@ export const routes = {
     PQuery: { path: "/dashboarddoctor/pquery" },
     DocMedication: { path: "/dashboarddoctor/docmedication" },
     DocTreatment: { path: "/dashboarddoctor/doctreatment" },
-    //Upgrade: { path: "/dashboard/upgrade"},
+    Upgrade: { path: "/dashboard/upgrade"},
     BootstrapTables: { path: "/tables/bootstrap-tables" },
     Billing: { path: "/examples/billing" },
     Invoice: { path: "/examples/invoice" },

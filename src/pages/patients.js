@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import { BACKEND_URL } from "../constants.js";
 import AugmentedAxios from "../utils/augmentedAxios";
 
-export default () => {
+const Patients = () => {
   const [Patient, setPatient] = useState([]);
   useEffect(() => {
     AugmentedAxios.get(`${BACKEND_URL}/patient/list`).then((res) => {
@@ -27,3 +27,5 @@ export default () => {
     </>
   );
 };
+
+export default Patients;

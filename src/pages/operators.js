@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import { BACKEND_URL } from "../constants.js";
 import AugmentedAxios from "../utils/augmentedAxios";
 
-export default () => {
+const Operators = () => {
   const [operators, setOperators] = useState([]);
   useEffect(() => {
     AugmentedAxios.get(`${BACKEND_URL}/operator/list`)
@@ -27,3 +27,5 @@ export default () => {
     </>
   );
 };
+
+export default Operators;

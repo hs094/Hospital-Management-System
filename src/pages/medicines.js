@@ -18,7 +18,7 @@ import { BACKEND_URL } from "../constants.js";
 import axios from "axios";
 import AugmentedAxios from "../utils/augmentedAxios";
 
-export default () => {
+const Medicines = () => {
   const [medication, setMedication] = useState([]);
 
   useEffect(() => {
@@ -39,3 +39,5 @@ export default () => {
     </>
   );
 };
+
+export default Medicines;
